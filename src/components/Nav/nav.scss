@@ -1,0 +1,41 @@
+.nav {
+    min-height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__link {
+        padding: 28px 16px;
+        text-transform: uppercase;
+        transition: .5s ease-in-out;
+        
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 120%;
+        
+        &:hover {
+            color: #5ECE7B;
+        }
+
+        &_active {
+            color: #5ECE7B;
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                height: 2px;
+                background: #5ECE7B;
+
+                animation: linkLine .3s linear 1 forwards;
+
+                @keyframes linkLine {
+                    from { width: 0%; }
+                    to { width: 100%; }
+                }
+            }
+        }
+    }
+}

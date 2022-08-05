@@ -1,0 +1,52 @@
+.select-container {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 160%;
+    position: relative;
+    cursor: pointer;
+}
+
+.select {
+    display: flex;
+    align-items: center;
+
+    p {
+        padding: 0px 10px;
+    }
+    img {
+        transition: .3s;
+
+        &.active {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.options-list {
+    margin-top: 10px;
+    padding: 12px 0px;
+    background: white;
+    filter: drop-shadow(0px 4px 35px rgba(168, 172, 176, 0.19));
+    transform: scaleX(0);
+    transition: .3s ease-in-out;
+
+    position: absolute;
+
+    &_active {
+        transform: scaleX(1);
+    }
+
+    li {
+        min-width: 130px;
+        list-style: none;
+        padding: 8px 40px 8px 20px;
+        transition: .3s ease-in-out;
+        margin-bottom: 5px;
+
+        &:last-child { margin-bottom: 0; }
+
+        &:hover {
+            background: #EEEEEE;
+        }
+    }
+}
