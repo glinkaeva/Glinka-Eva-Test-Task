@@ -15,6 +15,7 @@ const GET_ALL_PRODUCTS = gql`
                     }
                     amount
                 }
+                category
             }
         }
     }

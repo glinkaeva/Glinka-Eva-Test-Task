@@ -6,6 +6,7 @@ import CurrencyСonverter from './currencyConverter/CurrencyСonverter';
 import './nav.scss';
 
 import logo from '../../images/icons/logo.svg'
+import { Link } from 'react-router-dom';
 
 const navLinksData = [
     { linkTitle: 'all', linkTo: '/' },
@@ -28,7 +29,7 @@ export default class Nav extends Component {
                         })
                     }
                 </div>
-                <img src={logo} alt="logo" />
+                <Link to="/"><img src={logo} alt="logo" /></Link>
                 <div>
                     <CurrencyСonverter />
                 </div>

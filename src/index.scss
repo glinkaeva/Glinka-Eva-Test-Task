@@ -12,6 +12,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  margin-right: calc(-1 * (100vw - 100%));
 }
 
 img {
@@ -28,6 +30,9 @@ a {
   width: 100%;
   max-width: 1240px;
   margin: 0 auto;
+
+  box-sizing: initial;
+  padding: 0px 40px;
   
   color: #1D1F22;
   font-family: 'Raleway', sans-serif;

@@ -1,23 +1,11 @@
 import React, { Component } from 'react'
 
-import { connect } from "react-redux"
-
 import './currencyCoverter.scss'
 import { client } from '../../../index'
 
 import GET_CURRENCIES from '../../../queries/getCurrencies'
 
 import arrow from '../../../images/icons/arrow.svg'
-
-import {setCurrentCurrencies} from '../../../store/slices/currentCurrenciesSlice'
-
-const mapStateToProps = state =>{
-    return {
-        currencies: state.currencies
-    }
-}
-
-const mapDispatchToProps = { setCurrentCurrencies }
 
 class CurrencyСonverter extends Component {
     constructor(props) {
@@ -26,6 +14,9 @@ class CurrencyСonverter extends Component {
             error: '',
             data: '',
             loading: ''
+        }
+        this.state = {
+            currentCurrencies: '$'
         }
         this.listRef = React.createRef();
         this.imageRef = React.createRef();
@@ -41,7 +32,6 @@ class CurrencyСonverter extends Component {
             data: data,
             loading: loading
         })
-        
     }
 
     optionHandleClick() {
@@ -50,9 +40,8 @@ class CurrencyСonverter extends Component {
     }
 
     listSelected(e) {
-        const symbolMass = e.target.innerHTML.trim().split('');
-        const symbol = symbolMass[0] + symbolMass[1]
-        this.props.setCurrentCurrencies(symbol.trim())
+        const symbol = e.target.innerHTML.trim().split('');
+        this.setState({currentCurrencies: symbol[0] + symbol[1]})
         this.listRef.current.classList.remove('options-list_active')
         this.imageRef.current.classList.remove('active')
     }
@@ -61,7 +50,7 @@ class CurrencyСonverter extends Component {
         return (
             <div className='select-container'>
                 <div className="select" onClick={this.optionHandleClick}>
-                    <p>{this.props.currencies.currentCurrencies}</p>
+                    <p>{this.state.currentCurrencies}</p>
                     <img src={arrow} alt="arrow" ref={this.imageRef}/>
                 </div>
                 <ul className="options-list" ref={this.listRef}>
@@ -79,4 +68,4 @@ class CurrencyСonverter extends Component {
     }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(CurrencyСonverter);
+export default CurrencyСonverter;
