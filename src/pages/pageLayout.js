@@ -7,19 +7,15 @@ import { client } from '../index'
 import GET_ALL_PRODUCTS from '../queries/getAllProducts'
 import CardProduct from '../components/cardProduct/cardProduct';
 
-import { setCurrentProduct } from '../store/slices/currentProductSlice';
-
 import { motion } from 'framer-motion'
 import Nav from '../components/Nav/Nav';
 
-const mapStateToProps = state =>{
+const mapStateToProps = state => {
     return {
-        currencies: state.currencies,
-        product: state.product
+        currencies: state.currencies
     }
 }
 
-const mapDispatchToProps = { setCurrentProduct }
 
 class PageLayout extends Component {
     constructor(props) {
@@ -68,8 +64,7 @@ class PageLayout extends Component {
                                 cardTitle={name}
                                 cardPrice={prices[this.props.currencies.currentCurrenciesIndex].amount} //TODO: Current currencies
                                 cardSymbol={this.props.currencies.currentCurrencies}
-                                linkTo={`/${category}/${name}`}
-                                onClick={() => this.props.setCurrentProduct(id)}
+                                linkTo={`/${category}/${id}`}
                                 // onclick -> id в глобальное состояние/переадрисация -> новый запрос/шаблонная страница наполняется данныеми
                             />
                         ))
@@ -80,4 +75,4 @@ class PageLayout extends Component {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(PageLayout);
+export default connect(mapStateToProps)(PageLayout);

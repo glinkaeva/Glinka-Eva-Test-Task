@@ -10,8 +10,12 @@ function currentPage(currentPage, currentPageProps) {
 class NavLink extends Component {
     render() {
         const currentPath = window.location.pathname;
+        const strFirstIndex = window.location.pathname.indexOf('/')
+        const strLastIndex = window.location.pathname.lastIndexOf('/')
+        let str = [...currentPath].slice(strFirstIndex, strLastIndex).join('')
+        if (!str) str = window.location.pathname;
         return (
-            <Link to={this.props.linkTo} className={currentPage(currentPath, this.props.linkTo)}>{this.props.linkTitle}</Link>
+            <Link to={this.props.linkTo} className={currentPage(str, this.props.linkTo)}>{this.props.linkTitle}</Link>
         )
     }
 }

@@ -1,0 +1,36 @@
+.product__size-container {
+
+}
+
+.product__size {
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 18px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.product__size-item-box {
+    display: flex;
+}
+
+.product__size-item {
+    width: 63px;
+    height: 45px;
+    border: 1px solid #1D1F22;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+
+    &+& {
+        margin-left: 12px;
+    }
+
+    &_active {
+        color: white;
+        background: #1D1F22;
+    }
+}
