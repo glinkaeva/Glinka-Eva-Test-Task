@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import './size.scss'
+import addActiveClass from '../../functions/addActiveClass'
+import './SelectedItem.scss'
 
-export default class Size extends Component {
-    sizeConverter(value) {
+export default class SelectedItem extends Component {
+    selectConverter(value) {
         switch(value) {
             case 'Extra Small': 
                 return 'XS'
@@ -22,14 +23,17 @@ export default class Size extends Component {
     }
     render() {
         return (
-            <div className='product__size-container' style={{margin: this.props.margin}}>
-                <p className="product__size">
-                    Size:
+            <div className='selectedItem-container' style={{margin: this.props.margin}}>
+                <p className="selectedItem__title">
+                    {this.props.selectTitle}
                 </p>
-                <div className="product__size-item-box">
+                <div className="selectedItem-item-box">
                     {this.props.attributesItem.map(({ displayValue }) => 
-                        <div className='product__size-item' key={displayValue} onClick={(e) => {e.target.classList.add('product__size-item_active')}}>
-                            <p>{this.sizeConverter(displayValue)}</p>
+                        <div className='selectedItem__item' key={displayValue} 
+                            onClick={(e) => {
+                                addActiveClass(e, '.selectedItem__item', 'selectedItem__item_active')
+                            }}>
+                            <p>{this.selectConverter(displayValue)}</p>
                         </div>
                     )}
                 </div>

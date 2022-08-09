@@ -3,13 +3,27 @@
 }
 
 .product__colors {
-
+    font-family: 'Roboto Condensed';
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 18px;
+    margin-bottom: 8px;
 }
 
 .product__colors-item-box {
-
+    display: flex;
 }
 
 .product__colors-item {
+        width: 32px ;
+        height: 32px ;
+        cursor: pointer;
+
+        &+& {
+            margin-left: 8px;
+        }
     
-}
+        &_active {
+            border: 3px solid #5ECE7B;
+        }
+    }

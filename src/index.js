@@ -32,7 +32,7 @@ root.render(
       <div className='wrapper'>
         <BrowserRouter>
           <AnimatePresence> 
-            <Routes location={window.location} key={window.location.pathname}>
+            <Routes>
               <Route path="/" element={<PageAll />} replace/>
               <Route path="/clothes" element={<PageClothes />} replace/>
               <Route path="/clothes/:itemId" element={<PageItem />} replace/>

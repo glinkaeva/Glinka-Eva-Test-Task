@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import addActiveClass from '../../functions/addActiveClass'
+import './color.scss'
 
 export default class Color extends Component {
     render() {
@@ -8,12 +10,10 @@ export default class Color extends Component {
                     COLOR: 
                 </p>
                 <div className="product__colors-item-box">
-                    {this.props.colorsItem.map(({displayValue}) => 
-                        <div className="product__colors-item" key={displayValue} style={{background: displayValue}} 
+                    {this.props.colorsItem.map(({value}) => 
+                        <div className="product__colors-item" key={value} style={{background: `${value}`}} 
                             onClick={(e) => {
-                                const colors = document.querySelectorAll('.product__colors-item')
-                                for(let i=0; i<colors.length; i++) { colors[i].classList.remove("product__colors-item_active") }
-                                e.target.classList.add("product__colors-item_active");
+                                addActiveClass(e, '.product__colors-item', 'product__colors-item_active')
                             }}
                         />
                     )}

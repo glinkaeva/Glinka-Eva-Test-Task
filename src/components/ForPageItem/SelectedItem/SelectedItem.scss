@@ -1,8 +1,8 @@
-.product__size-container {
+.selectedItem-container {
 
 }
 
-.product__size {
+.selectedItem__title {
     font-family: 'Roboto Condensed';
     font-style: normal;
     font-weight: 700;
@@ -12,11 +12,11 @@
     margin-bottom: 8px;
 }
 
-.product__size-item-box {
+.selectedItem-item-box {
     display: flex;
 }
 
-.product__size-item {
+.selectedItem__item {
     width: 63px;
     height: 45px;
     border: 1px solid #1D1F22;
@@ -24,6 +24,7 @@
     justify-content: center;
     align-items: center;
     background: white;
+    cursor: pointer;
 
     &+& {
         margin-left: 12px;

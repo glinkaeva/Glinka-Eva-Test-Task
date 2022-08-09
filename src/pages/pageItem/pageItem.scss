@@ -1,5 +1,6 @@
 .cardItem__wrapper {
     display: flex;
+    margin-top: 80px;
 }
 
 .gallery {
@@ -10,8 +11,8 @@
     display: flex;
     flex-flow: column wrap;
     align-content: space-between;
-    margin-top: 80px;
-    // border: 1px solid;
+
+    margin-right: 100px;
 
     &__list {
         height: 100%;
@@ -37,5 +38,36 @@
             max-height: 510px;
             cursor: initial;
         }
+    }
+}
+
+.cardItem__content {
+    margin-left: 40px;
+}
+
+.cardItem__priceTitle {
+    font-family: 'Roboto Condensed';
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 18px;
+    margin-bottom: 15px;
+}
+
+.cardItem__price {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 18px;
+    margin-bottom: 40px;
+}
+
+.cardItem__describe {
+    max-width: 300px;
+    margin-top: 40px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 159.96%;
+    
+    li {
+        margin-left: 20px;
     }
 }
