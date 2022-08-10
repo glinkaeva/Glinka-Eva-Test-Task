@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import './titleProduct.scss'
 
-export default class TitleProduct extends Component {
+import './title.scss'
+
+export default class Title extends Component {
     render() {
         return (
             <div className='product__title-container' style={{margin: this.props.margin}}>

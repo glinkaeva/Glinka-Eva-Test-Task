@@ -20,6 +20,16 @@
         overflow-y: scroll;
         padding-right: 20px;
         margin-right: 20px;
+
+        &::-webkit-scrollbar { /* 1 - скроллбар */
+            width: 12px;
+            background-color: #efefef;
+        }
+        
+        &::-webkit-scrollbar-thumb { /* 5 - ползунок */
+            border-radius: 30px;
+            background-color: #5ECE7B;
+        }
     }
 
     &__item {

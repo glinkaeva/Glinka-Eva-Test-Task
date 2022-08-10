@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import PageLayout from '../pageLayout'
 
-export default class PageAll extends Component {
+import PageLayout from './PageLayout'
+
+export default class All extends Component {
     render() {
         return (
             <>

@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
-import addActiveClass from '../../functions/addActiveClass'
+
 import './color.scss'
+
+import addActiveClass from '../../../common-functions/addActiveClass'
 
 export default class Color extends Component {
     render() {

@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import PageLayout from '../pageLayout'
 
-export default class PageClothes extends Component {
+import PageLayout from './PageLayout'
+
+export default class Clothes extends Component {
     render() {
         return (
             <>

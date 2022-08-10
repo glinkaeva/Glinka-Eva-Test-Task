@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
-
-import NavLink from './navLink/NavLink';
-import CurrencyСonverter from './currencyConverter/CurrencyСonverter';
+import { Link } from 'react-router-dom';
 
 import './nav.scss';
 
+import NavLink from './link/NavLink';
+import Cart from './cart/Cart';
+import CurrencyСonverter from './currency-converter/CurrencyConverter';
+
 import logo from '../../images/icons/logo.svg'
-import { Link } from 'react-router-dom';
 
 const navLinksData = [
     { linkTitle: 'all', linkTo: '/' },
@@ -30,8 +31,9 @@ export default class Nav extends Component {
                     }
                 </div>
                 <Link to="/"><img src={logo} alt="logo" /></Link>
-                <div>
+                <div className='rightSide'>
                     <CurrencyСonverter />
+                    <Cart />
                 </div>
             </nav>
         )

@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
-import addActiveClass from '../../functions/addActiveClass'
-import './SelectedItem.scss'
 
-export default class SelectedItem extends Component {
+import './attributes.scss'
+
+import addActiveClass from '../../common-functions/addActiveClass'
+
+export default class Attributes extends Component {
     selectConverter(value) {
         switch(value) {
             case 'Extra Small': 
@@ -41,5 +43,3 @@ export default class SelectedItem extends Component {
         )
     }
 }
-
-// TODO: обработать снятие выделения; доработать с классами

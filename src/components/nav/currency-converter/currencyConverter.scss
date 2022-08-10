@@ -32,6 +32,8 @@
     transform: scaleX(0);
     transition: .3s ease-in-out;
 
+    z-index: 5;
+
     position: absolute;
 
     &_active {

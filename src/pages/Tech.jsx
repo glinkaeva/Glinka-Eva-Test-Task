@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import PageLayout from '../pageLayout'
 
-export default class PageTech extends Component {
+import PageLayout from './PageLayout'
+
+export default class Tech extends Component {
     render() {
         return (
             <>
