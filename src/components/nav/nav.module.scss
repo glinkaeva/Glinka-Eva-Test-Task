@@ -4,7 +4,7 @@
     justify-content: space-between;
     align-items: center;
 
-    &__link {
+    .link {
         padding: 28px 16px;
         text-transform: uppercase;
         transition: .5s ease-in-out;
@@ -38,7 +38,7 @@
             }
         }
     }
-    .rightSide {
+    .right_side {
         display: flex;
         align-items: center;
     }

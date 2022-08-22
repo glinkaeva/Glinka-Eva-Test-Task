@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from "react-redux"
 
-import './currencyConverter.scss'
+import styles from './currencyConverter.module.scss'
 
 import { client } from '../../../index'
 import GET_CURRENCIES from '../../../queries/getCurrencies'
@@ -43,26 +43,26 @@ class CurrencyСonverter extends Component {
     }
 
     optionHandleClick() {
-        this.listRef.current.classList.toggle('options-list_active')
-        this.imageRef.current.classList.toggle('active')
+        this.listRef.current.classList.toggle(`${styles.options_list_active}`)
+        this.imageRef.current.classList.toggle(`${styles.active}`)
     }
 
     listSelected(e) {
         const symbolMass = e.target.innerHTML.trim().split('');
         const symbol = symbolMass[0] + symbolMass[1]
         this.props.setCurrentCurrencies(symbol.trim())
-        this.listRef.current.classList.remove('options-list_active')
-        this.imageRef.current.classList.remove('active')
+        this.listRef.current.classList.remove(`${styles.options_list_active}`)
+        this.imageRef.current.classList.remove(`${styles.active}`)
     }
 
     render() {
         return (
-            <div className='select-container'>
-                <div className="select" onClick={this.optionHandleClick}>
+            <div className={styles.wrapper}>
+                <div className={styles.select} onClick={this.optionHandleClick}>
                     <p>{this.props.currencies.currentCurrencies}</p>
                     <img src={arrow} alt="arrow" ref={this.imageRef}/>
                 </div>
-                <ul className="options-list" ref={this.listRef}>
+                <ul className={styles.options_list} ref={this.listRef}>
                     {this.state.loading && '<p>Loading...</p>'}
                     {this.state.error && '<p>Error...</p>'}
                     {this.state.data && 

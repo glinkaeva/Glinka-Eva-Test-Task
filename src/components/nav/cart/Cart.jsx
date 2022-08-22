@@ -1,18 +1,18 @@
 import React, { Component } from 'react'
-import './cart.scss'
-import cart from '../../../images/icons/basket.svg'
+import styles from './cart.module.scss'
+import cart from '../../../images/icons/cart.svg'
 
 export default class Cart extends Component {
     render() {
         return (    
-            <div className='navBasket'>
-                <div className='navBasket__container'>
+            <div className={styles.wrapper}>
+                <div className={styles.cart}>
                     <img src={cart} alt='cart' />
-                    <div className="navBasket__circle">
+                    <div className={styles.cart_circle}>
                         <p>{this.props.counter}</p>
                     </div>
                 </div>
-                <div className='navBasket_extended'>
+                <div className={styles.extended}>
                     
                 </div>
             </div>

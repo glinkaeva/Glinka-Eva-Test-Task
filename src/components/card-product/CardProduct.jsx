@@ -1,35 +1,37 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
-import './cardProduct.scss'
+import styles from './cardProduct.module.scss'
 
-import basket from '../../images/icons/basket_white.svg'
+import cart from '../../images/icons/cart_white.svg'
 
 export default class CardProduct extends Component {
     constructor(props) {
         super(props)
-
-        this.basket = React.createRef();
+        this.cart = React.createRef();
     }
     render() {
         return (
-            <Link to={this.props.linkTo}>
-                <div className='card' style={{color: this.props.color}} 
-                    onMouseOver={() => {this.basket.current.classList.add('addToBasket_active')}} 
-                    onMouseOut={() => {this.basket.current.classList.remove('addToBasket_active')}}
-                >
-                    <div className="card__image" style={{backgroundImage: `url(${this.props.image})`}}>
-                        <div className="out-of-stock" style={{display: this.props.display}}>
-                            <p>out of stock</p>
+            <div className={styles.wrapper}>
+                <Link to={this.props.linkTo} id={this.props.id}>
+                    <div className={styles.card}  style={{color: this.props.color}} 
+                        onMouseOver={() => {this.cart.current.classList.add(`${styles.add_to_cart_active}`)}} 
+                        onMouseOut={() => {this.cart.current.classList.remove(`${styles.add_to_cart_active}`)}}
+                    >
+                        <div className={styles.preview} style={{backgroundImage: `url(${this.props.image})`}}>
+                            <div className={styles.out_of_stock} style={{display: this.props.display}}>
+                                <p>out of stock</p>
+                            </div>
                         </div>
-                        <div className="addToBasket" ref={this.basket}>
-                            <img src={basket} alt="add to basket" />
-                        </div>
+                        <p className={`${styles.text} ${styles.title}`}>{this.props.cardTitle}</p>
+                        <p className={`${styles.text} ${styles.price}`}>{this.props.cardSymbol}{this.props.cardPrice}</p>
                     </div>
-                    <p className="card__text card__title">{this.props.cardTitle}</p>
-                    <p className="card__text card__price">{this.props.cardSymbol}{this.props.cardPrice}</p>
+                </Link>
+                <div className={styles.add_to_cart} ref={this.cart} onClick={this.props.onClickCard}> 
+                    <img src={cart} alt="add to cart" />
                 </div>
-            </Link>
+            </div>
         )
     }
 }
+

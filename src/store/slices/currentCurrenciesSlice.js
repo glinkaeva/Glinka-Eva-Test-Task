@@ -10,7 +10,6 @@ const currentCurrenciesSlice = createSlice({
         setCurrentCurrencies(state, action) {
             state.currentCurrencies = action.payload
 
-            // TODO сделай нормально
             if(state.currentCurrencies === '$') state.currentCurrenciesIndex = 0
             else if(state.currentCurrencies === '£') state.currentCurrenciesIndex = 1
             else if(state.currentCurrencies === 'A$') state.currentCurrenciesIndex = 2

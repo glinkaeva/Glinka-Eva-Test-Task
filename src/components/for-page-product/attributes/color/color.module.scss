@@ -1,8 +1,4 @@
-.product__colors-container {
-
-}
-
-.product__colors {
+.title {
     font-family: 'Roboto Condensed';
     font-weight: 700;
     font-size: 18px;
@@ -10,11 +6,11 @@
     margin-bottom: 8px;
 }
 
-.product__colors-item-box {
+.item_box {
     display: flex;
 }
 
-.product__colors-item {
+.item {
         width: 32px ;
         height: 32px ;
         cursor: pointer;

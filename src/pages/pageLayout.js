@@ -8,6 +8,8 @@ import CardProduct from '../components/card-product/CardProduct';
 import { client } from '../index'
 import GET_ALL_PRODUCTS from '../queries/getAllProducts'
 
+import { addInfo } from '../store/slices/addItemInfoSlice'
+
 const mapStateToProps = state => {
     return {
         currencies: state.currencies
@@ -56,6 +58,7 @@ class PageLayout extends Component {
                                 this.state.data.categories[this.state.massIndex].products.map(({id, name, inStock, gallery, prices, category}) => 
                                 (
                                     <CardProduct 
+                                        id={id}
                                         key={id}
                                         color={inStock ? '#1D1F22' : '#8D8F9A'}
                                         image={gallery[0]}
@@ -64,6 +67,9 @@ class PageLayout extends Component {
                                         cardPrice={prices[this.props.currencies.currentCurrenciesIndex].amount} //TODO: Current currencies
                                         cardSymbol={this.props.currencies.currentCurrencies}
                                         linkTo={`/${category}/${id}`}
+                                        onClickCard={(id, name, price ) => {
+                                            //TODO
+                                        }}
                                     />
                                 ))
                             }
@@ -73,5 +79,7 @@ class PageLayout extends Component {
         )
     }
 }
+
+// в шаблоне страницы добавить состояние для атрибутов
 
 export default connect(mapStateToProps)(PageLayout);

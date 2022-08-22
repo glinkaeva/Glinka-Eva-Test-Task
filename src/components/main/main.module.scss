@@ -1,8 +1,4 @@
-//TODO: try grid for better view
 .main {
-    // display: flex;
-    // justify-content: space-between;
-    // flex-wrap: wrap;
     width: 10%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);

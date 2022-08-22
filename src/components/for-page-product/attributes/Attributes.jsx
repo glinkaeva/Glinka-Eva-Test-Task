@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import './attributes.scss'
+import styles from './attributes.module.scss'
 
 import addActiveClass from '../../common-functions/addActiveClass'
 
@@ -25,15 +25,16 @@ export default class Attributes extends Component {
     }
     render() {
         return (
-            <div className='selectedItem-container' style={{margin: this.props.margin}}>
-                <p className="selectedItem__title">
+            <div style={{margin: this.props.margin}}>
+                <p className={styles.title}>
                     {this.props.selectTitle}
                 </p>
-                <div className="selectedItem-item-box">
-                    {this.props.attributesItem.map(({ displayValue }) => 
-                        <div className='selectedItem__item' key={displayValue} 
+                <div className={styles.item_box}>
+                    {this.props.attributesItem.map(({ displayValue }, index) => 
+                        <div className={index===0 ? `${styles.item} ${styles.item_active}` : `${styles.item}`} key={displayValue} 
                             onClick={(e) => {
-                                addActiveClass(e, '.selectedItem__item', 'selectedItem__item_active')
+                                addActiveClass(e, `${styles.item}`, `${styles.item_active}`)
+                                
                             }}>
                             <p>{this.selectConverter(displayValue)}</p>
                         </div>

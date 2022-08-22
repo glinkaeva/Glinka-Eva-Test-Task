@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 
-import './nav.scss';
+import styles from'./nav.module.scss';
 
 import NavLink from './link/NavLink';
 import Cart from './cart/Cart';
@@ -18,7 +18,7 @@ const navLinksData = [
 export default class Nav extends Component {
     render() {
         return (
-            <nav className='nav'>
+            <nav className={styles.nav}>
                 <div>
                     {
                         navLinksData.map(({linkTitle, linkTo}) => {
@@ -31,7 +31,7 @@ export default class Nav extends Component {
                     }
                 </div>
                 <Link to="/"><img src={logo} alt="logo" /></Link>
-                <div className='rightSide'>
+                <div className={styles.right_side}>
                     <CurrencyСonverter />
                     <Cart />
                 </div>

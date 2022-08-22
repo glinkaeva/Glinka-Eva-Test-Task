@@ -1,21 +1,21 @@
 import React, { Component } from 'react'
 
-import './color.scss'
+import styles from './color.module.scss'
 
 import addActiveClass from '../../../common-functions/addActiveClass'
 
 export default class Color extends Component {
     render() {
         return (
-            <div className='product__colors-container' style={{margin: this.props.margin}}>
-                <p className="product__colors">
+            <div style={{margin: this.props.margin}}>
+                <p className={styles.title}>
                     COLOR: 
                 </p>
-                <div className="product__colors-item-box">
-                    {this.props.colorsItem.map(({value}) => 
-                        <div className="product__colors-item" key={value} style={{background: `${value}`}} 
+                <div className={styles.item_box}>
+                    {this.props.colorsItem.map(({value}, index) => 
+                        <div className={index===0 ? `${styles.item} ${styles.item_active}` : `${styles.item}`} key={value} style={{background: `${value}`}} 
                             onClick={(e) => {
-                                addActiveClass(e, '.product__colors-item', 'product__colors-item_active')
+                                addActiveClass(e, `${styles.item}`, `${styles.item_active}`)
                             }}
                         />
                     )}

@@ -1,4 +1,4 @@
-.cardItem__wrapper {
+.wrapper {
     display: flex;
     margin-top: 80px;
 }
@@ -14,12 +14,13 @@
 
     margin-right: 100px;
 
-    &__list {
+    .list {
         height: 100%;
         max-height: 510px;
-        overflow-y: scroll;
         padding-right: 20px;
         margin-right: 20px;
+        
+        overflow-y: scroll;
 
         &::-webkit-scrollbar { /* 1 - скроллбар */
             width: 12px;
@@ -32,7 +33,7 @@
         }
     }
 
-    &__item {
+    .list_item {
         width: 80px;
         height: 80px;
         background-size: cover;
@@ -51,11 +52,11 @@
     }
 }
 
-.cardItem__content {
+.content_box {
     margin-left: 40px;
 }
 
-.cardItem__priceTitle {
+.title_price {
     font-family: 'Roboto Condensed';
     font-weight: 700;
     font-size: 18px;
@@ -63,14 +64,14 @@
     margin-bottom: 15px;
 }
 
-.cardItem__price {
+.price {
     font-weight: 700;
     font-size: 24px;
     line-height: 18px;
     margin-bottom: 40px;
 }
 
-.cardItem__describe {
+.describe {
     max-width: 300px;
     margin-top: 40px;
     font-weight: 400;

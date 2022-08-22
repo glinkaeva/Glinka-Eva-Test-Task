@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import './main.scss'
+import styles from './main.module.scss'
 
 export default class Main extends Component {
     render() {
         return (
-            <main className='main'>
+            <main className={styles.main}>
                 {this.props.children}
             </main>
         )

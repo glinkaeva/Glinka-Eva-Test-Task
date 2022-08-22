@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import styles from'../nav.module.scss';
 
 function currentPage(currentPage, currentPageProps) {
     if(currentPage===currentPageProps) {
-        return 'nav__link nav__link_active'
-    } else return 'nav__link'
+        return `${styles.link} ${styles.link_active}`
+    } else return `${styles.link}`
 }
 
 class NavLink extends Component {

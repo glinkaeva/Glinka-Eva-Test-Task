@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 
-import './title.scss'
+import styles from './title.module.scss'
 
 export default class Title extends Component {
     render() {
         return (
-            <div className='product__title-container' style={{margin: this.props.margin}}>
-                <p className="product__title">{this.props.title}</p>
-                <p className="product__describe">{this.props.describe}</p>
+            <div style={{margin: this.props.margin}}>
+                <p className={styles.title}>{this.props.title}</p>
+                <p className={styles.describe}>{this.props.describe}</p>
             </div>
         )
     }
